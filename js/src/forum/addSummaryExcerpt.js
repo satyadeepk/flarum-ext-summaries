@@ -16,7 +16,8 @@ export default function addSummaryExcerpt() {
     const excerptLength = app.forum.attribute('flarum-ext-summaries.excerpt_length') || 200;
 
     if (firstPost) {
-      const excerpt = <span>{truncate(firstPost.contentPlain(), excerptLength)}</span>;
+//       const excerpt = <span>{truncate(firstPost.contentPlain(), excerptLength)}</span>;
+      const excerpt = <span>{truncate(firstPost.contentHtml(), excerptLength)}</span>;
 
       items.add('excerpt', excerpt, -100);
     }
