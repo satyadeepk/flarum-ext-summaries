@@ -22,9 +22,19 @@ export default function addSummaryExcerpt() {
 
             const match = firstPostHtml && firstPostHtml.match(reg);
             const firstImageUrl = match && match[1];
-            //       const excerpt = <span>{truncate(firstPost.contentPlain(), excerptLength)}</span>;
+
+            let excerpt = (
+                <span>{truncate(firstPost.contentPlain(), excerptLength)}</span>
+            );
+
             if (firstImageUrl) {
-                const excerpt = <img src={firstImageUrl} width="200" />;
+                excerpt = (
+                    <div>
+                        {excerpt}
+                        <br />
+                        <img src={firstImageUrl} width="200" />
+                    </div>
+                );
                 items.add('excerpt', excerpt, -100);
             }
         }
