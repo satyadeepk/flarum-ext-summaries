@@ -22,7 +22,6 @@ export default function addSummaryExcerpt() {
 
             const match = firstPostHtml && firstPostHtml.match(reg);
             const firstImageUrl = match && match[1];
-            console.log(firstPostHtml, firstImageUrl);
             //       const excerpt = <span>{truncate(firstPost.contentPlain(), excerptLength)}</span>;
             if (firstImageUrl) {
                 const excerpt = <img src={firstImageUrl} width="200" />;
